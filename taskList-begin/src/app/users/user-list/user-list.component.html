@@ -1,20 +1,19 @@
 <div class="card">
   <div class="card-header">
-    {{pageTitle}}
+    {{ pageTitle }}
   </div>
 
-  <div class='card-body'
-       *ngIf="users().length">
-
+  <div class="card-body" *ngIf="users().length">
     <div class="list-group">
-      <button type="button"
-              class="list-group-item"
-              *ngFor="let user of users()"
-              [ngClass]="{'active': user?.id === selectedUserId()}"
-              (click)="onSelected(user.id)">
+      <button
+        type="button"
+        class="list-group-item"
+        *ngFor="let user of users()"
+        [ngClass]="{ active: user?.id === selectedUserId() }"
+        (click)="onSelectUser(user.id)"
+      >
         {{ user.name }}
       </button>
     </div>
   </div>
-
 </div>
